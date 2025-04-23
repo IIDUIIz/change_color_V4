@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const colorPicker = document.getElementById('colorPicker');
     const enablePicker = document.getElementById('enablePicker');
+    const openOptionsButton = document.getElementById('openOptions');
 
     // Carregar cor salva
     chrome.storage.local.get(['color', 'enabled'], function(result) {
@@ -25,6 +26,12 @@ document.addEventListener('DOMContentLoaded', function() {
         if (this.checked) {
             updateHeaderColor(colorPicker.value);
         }
+    });
+
+    // Abrir página de configurações
+    openOptionsButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        chrome.runtime.openOptionsPage();
     });
 
     // Função para atualizar a cor do header

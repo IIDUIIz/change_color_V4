@@ -3,6 +3,7 @@
   "name": "Change Colors",
   "version": "1.0",
   "description": "Uma extensão para alterar as cores de páginas web",
+  "options_page": "options.html",
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
